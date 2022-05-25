@@ -14,7 +14,7 @@ public class Plunger extends Item implements Rebounder{
      * @param id     the id
      * @param points the points
      */
-    public Plunger(Integer id, Integer points) {
+    public Plunger(String id, Integer points) {
         super(id, points);
     }
 
@@ -26,11 +26,12 @@ public class Plunger extends Item implements Rebounder{
      */
     @Override
     Item goTo() {
+        // TODO: 26/05/2022
         return null;
     }
 
     @Override
     public void Bounce(Item from, Item to, Integer strength) {
-
+        // TODO: 26/05/2022
     }
 }

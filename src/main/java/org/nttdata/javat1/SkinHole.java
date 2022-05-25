@@ -13,17 +13,24 @@ public class SkinHole extends Item implements Hole, Rebounder{
      * @param id     the id
      * @param points the points
      */
-    public SkinHole(Integer id, Integer points) {
+    public SkinHole(String id, Integer points) {
         super(id, points);
     }
 
     public Integer Roulette (){
+        // TODO: 26/05/2022
         return 0;
     }
 
     @Override
     public boolean extraBall() {
+        // TODO: 26/05/2022
         return false;
+    }
+
+    @Override
+    public void availableExtraBall(boolean available) {
+        // TODO: 26/05/2022
     }
 
     /**
@@ -34,11 +41,12 @@ public class SkinHole extends Item implements Hole, Rebounder{
      */
     @Override
     Item goTo() {
+        // TODO: 26/05/2022
         return null;
     }
 
     @Override
     public void Bounce(Item from, Item to, Integer strength) {
-
+        // TODO: 26/05/2022
     }
 }

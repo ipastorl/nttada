@@ -10,6 +10,6 @@ package org.nttdata.javat1;
 public class Flipper implements Rebounder{
     @Override
     public void Bounce(Item from, Item to, Integer strength) {
-
+        // TODO: 26/05/2022
     }
 }

@@ -1,7 +1,8 @@
 package org.nttdata.javat1;
 
 /**
- * La clase Flipper (paleta o maneja), implementa la clase Rebounder. Hereda de la superClase Item
+ * Target: Son las dianas abatibles, suelen servir para desbloquear el acceso a un objeto,
+ * hoyo o pasillo, en otras ocasiones para aumentar los multiplicadores o Misiones.
  *
  * @author Isabel Pastor López
  * @version 1.0
@@ -14,13 +15,13 @@ public class Target extends Item implements Rebounder {
      * @param id     the id
      * @param points the points
      */
-    public Target(Integer id, Integer points) {
+    public Target(String id, Integer points) {
         super(id, points);
     }
 
     @Override
     public void Bounce(Item from, Item to, Integer strength) {
-
+        // TODO: 26/05/2022
     }
 
     /**
@@ -30,6 +31,7 @@ public class Target extends Item implements Rebounder {
      */
     @Override
     Item goTo() {
+        // TODO: 26/05/2022
         return null;
     }
 }

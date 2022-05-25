@@ -13,32 +13,57 @@ package org.nttdata.javat1;
 public class Combo extends Item{
 
     // Atributos
-
     private Integer until;
     private Integer climb;
     private static final Integer MIN = 1;
 
-    // Constuctor
-
-    public Combo(Integer id, Integer points, Integer until) {
+    /**
+     * Instantiates a new Combo.
+     *
+     * @param id     the id
+     * @param points the points
+     * @param until  the until
+     */
+// Constuctor
+    public Combo(String id, Integer points, Integer until) {
         super(id, points);
         this.until = until;
     }
 
     // Getters and Setters
 
+    /**
+     * Gets until.
+     *
+     * @return the until
+     */
     public Integer getUntil() {
         return until;
     }
 
+    /**
+     * Sets until.
+     *
+     * @param until the until
+     */
     public void setUntil(Integer until) {
         this.until = until;
     }
 
+    /**
+     * Gets climb.
+     *
+     * @return the climb
+     */
     public Integer getClimb() {
         return climb;
     }
 
+    /**
+     * Sets climb.
+     *
+     * @param climb the climb
+     */
     public void setClimb(Integer climb) {
         this.climb = climb;
     }
@@ -50,6 +75,7 @@ public class Combo extends Item{
      */
     @Override
     Item goTo() {
+        // TODO: 26/05/2022
         return null;
     }
 

@@ -16,7 +16,7 @@ public class Slingshot extends Item implements Rebounder{
      * @param id     the id
      * @param points the points
      */
-    public Slingshot(Integer id, Integer points) {
+    public Slingshot(String id, Integer points) {
         super(id, points);
     }
 
@@ -33,6 +33,7 @@ public class Slingshot extends Item implements Rebounder{
      */
     @Override
     Item goTo() {
+        // TODO: 26/05/2022
         return null;
     }
 }

@@ -11,17 +11,16 @@ import java.util.Objects;
  * @see <a href="https://pinballvirtual.es/diccionario-pinball-virtual/">Diccionario Pinball Virtual</a>
  */
 public abstract class Item {
-    private Integer id;
+    private String id;
     private Integer points;
     private Integer multiplier;
 
     /**
      * Instantiates a new Item.
-     *
-     * @param id     the id
+     *  @param id     the id
      * @param points the points
      */
-    public Item(Integer id, Integer points) {
+    public Item(String id, Integer points) {
         this.id = id;
         this.multiplier = 1;
         this.points = points;
@@ -51,7 +50,7 @@ public abstract class Item {
      *
      * @return the id
      */
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
@@ -60,7 +59,7 @@ public abstract class Item {
      *
      * @param id the id
      */
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

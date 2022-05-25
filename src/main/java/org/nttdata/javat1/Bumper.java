@@ -24,7 +24,7 @@ public class Bumper extends Item implements Rebounder{
      * @param points   the points
      * @param strength the strength
      */
-    public Bumper(Integer id, Integer points, Integer strength) {
+    public Bumper(String id, Integer points, Integer strength) {
         super(id, points);
         this.strength = strength;
     }
@@ -36,6 +36,7 @@ public class Bumper extends Item implements Rebounder{
      */
     @Override
     Item goTo() {
+        // TODO: 26/05/2022
         return null;
     }
 
@@ -61,6 +62,6 @@ public class Bumper extends Item implements Rebounder{
 
     @Override
     public void Bounce(Item from, Item to, Integer strength) {
-
+        // TODO: 26/05/2022
     }
 }
