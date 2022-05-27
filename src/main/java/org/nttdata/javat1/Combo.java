@@ -24,21 +24,30 @@ public class Combo extends Item{
      * @param points the points
      * @param until  the until
      */
-// Constuctor
+    // Constuctor
     public Combo(String id, Integer points, Integer until) {
         super(id, points);
-        this.until = until;
+        setUntil(until);
+    }
+
+    @Override
+    void showInfo() {
+        String info = " Pasillo "
+                .concat(super.getId())
+                .concat(" alcanzado : + ")
+                .concat(String.valueOf(super.getPoints()))
+                .concat(" puntos");
+        System.out.println(info);
     }
 
     // Getters and Setters
-
     /**
      * Gets until.
      *
      * @return the until
      */
     public Integer getUntil() {
-        return until;
+        return this.until;
     }
 
     /**
@@ -60,24 +69,10 @@ public class Combo extends Item{
     }
 
     /**
-     * Sets climb.
+     * Sets climb, número random entre el uno y el máximo del pasillo o rampa
      *
-     * @param climb the climb
      */
-    public void setClimb(Integer climb) {
-        this.climb = climb;
+    private void setClimb() {
+        this.climb = T1MainIPL.random(MIN, getUntil());
     }
-
-    /**
-     * Go to item.
-     *
-     * @return the item
-     */
-    @Override
-    Item goTo() {
-        // TODO: 26/05/2022
-        return null;
-    }
-
-
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <appender name="appenderrollinpolicy" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- SALIDA POR FICHERO -->
+        <file>C:\Users\issa2\OneDrive\Documentos\DAW\NTTDATA\nttada\src\main\resources\logs\salidalogs.log</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+                <fileNamePattern>C:\Users\issa2\OneDrive\Documentos\DAW\NTTDATA\nttada\src\main\resources\logs\salidalogs.log.%d{yy-MM-dd}.%i.log.gz</fileNamePattern>
+                <maxFileSize>15MB</maxFileSize>
+                <!-- MÁXIMO TIEMPO DE GUARDADO -->
+                <maxHistory>50</maxHistory>
+                <!-- MÁXIMA CAPACIDAD DE GUARDADO -->
+                <totalSizeCap>150MB</totalSizeCap>
+            </rollingPolicy>
+        <!-- LAYOUT PERSONALIZADO -->
+        <encoder>
+            <pattern>%d{HH:mm:ss} [%t] %-5level %logger{36} - [%method] - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern> %d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+    <logger name="Loggerisa" level="debug" additivity="false">
+        <appender-ref ref="appenderrollingpolicy"/>
+    </logger>
+    <root level="debug">
+        <appender-ref ref="appenderrollingpolicy"/>
+    </root>
+</configuration>

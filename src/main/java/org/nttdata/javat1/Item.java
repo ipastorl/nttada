@@ -5,6 +5,8 @@ import java.util.Objects;
 /**
  * La clase Item tiene como subclases Combo, Bumper, Slingshot, DropTarget y Flipper
  * Tiene como atributos (id, points)
+ * y el atributo multiplier que irá cambiando dependiendo de los bonus y multiplicará los puntos de cada
+ * ítem por una cantidad (Ej: 2x, 3x .. nx)
  *
  * @author Isabel Pastor López
  * @version 1.0
@@ -13,27 +15,22 @@ import java.util.Objects;
 public abstract class Item {
     private String id;
     private Integer points;
-    private Integer multiplier;
 
     /**
      * Instantiates a new Item.
-     *  @param id     the id
+     *
+     * @param id     the id
      * @param points the points
      */
     public Item(String id, Integer points) {
-        this.id = id;
-        this.multiplier = 1;
-        this.points = points;
-        this.points = getPoints(); // puntos * multiplicador
+        setId(id);
+        setPoints(points);
     }
 
     /**
-     * Abstract Method
-     * Go to item.
-     *
-     * @return the item
+     * Show info.
      */
-    abstract Item goTo();
+    abstract void showInfo();
 
     /**
      * Gets points.
@@ -41,8 +38,7 @@ public abstract class Item {
      * @return the points
      */
     public Integer getPoints() {
-        this.points *= getMultiplier();
-        return points;
+        return this.points;
     }
 
     /**
@@ -59,7 +55,7 @@ public abstract class Item {
      *
      * @param id the id
      */
-    public void setId(String id) {
+    private void setId(String id) {
         this.id = id;
     }
 
@@ -68,26 +64,8 @@ public abstract class Item {
      *
      * @param points the points
      */
-    public void setPoints(Integer points) {
+    private void setPoints(Integer points) {
         this.points = points;
-    }
-
-    /**
-     * Gets multiplier.
-     *
-     * @return the multiplier
-     */
-    public Integer getMultiplier() {
-        return multiplier;
-    }
-
-    /**
-     * Sets multiplier.
-     *
-     * @param multiplier the multiplier
-     */
-    public void setMultiplier(Integer multiplier) {
-        this.multiplier = multiplier;
     }
 
     @Override

@@ -8,7 +8,8 @@ package org.nttdata.javat1;
  * @version 1.0
  * @see <a href="https://pinballvirtual.es/diccionario-pinball-virtual/">Diccionario Pinball Virtual</a>
  */
-public class Target extends Item implements Rebounder {
+public class Target extends Item {
+
     /**
      * Instantiates a new Item.
      *
@@ -20,18 +21,13 @@ public class Target extends Item implements Rebounder {
     }
 
     @Override
-    public void Bounce(Item from, Item to, Integer strength) {
-        // TODO: 26/05/2022
+    void showInfo() {
+        String info = " Diana "
+                .concat(super.getId())
+                .concat(" alcanzada : + ")
+                .concat(String.valueOf(super.getPoints()))
+                .concat(" puntos");
+        System.out.println(info);
     }
 
-    /**
-     * Go to item.
-     *
-     * @return the item
-     */
-    @Override
-    Item goTo() {
-        // TODO: 26/05/2022
-        return null;
-    }
 }

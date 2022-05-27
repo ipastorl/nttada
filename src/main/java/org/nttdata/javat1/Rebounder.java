@@ -2,7 +2,7 @@ package org.nttdata.javat1;
 
 /**
  * La interfaz Rebounder permite implementar a los ítems el método Bounce
- * (de dónde recibe la bola y hacia dónde se dirige)
+ * (dependiendo de la fuerza que ha alcanzado la bola, rebotará contra otro Bounce n veces (aleatorio))
  *
  * @author Isabel Pastor López
  * @version 1.0
@@ -11,10 +11,10 @@ package org.nttdata.javat1;
 public interface Rebounder {
 
     /**
+     * Fuerza con la que la bola se lanza, dependiendo de su fuerza rebotará en reboteadores n veces
+     * consiguiendo en cada rebote n puntos (aleatorio)
      *
-     * @param from Desde qué Item vino la bola
-     * @param to Hacia qué Item se dirige la bola
-     * @param strength Fuerza con la que la bola entra
+     * @return Integer
      */
-    public void Bounce(Item from, Item to, Integer strength);
+    Integer Bounce();
 }

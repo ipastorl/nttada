@@ -1,40 +1,68 @@
 package org.nttdata.javat1;
 
 /**
- *  Clase Bolo recibe como atributos
- *        la posición (Item) donde se encuentra
- *        un atributo boolean estático que muestra si la bola está en juego o se ha colado (Game Over)
- *  @author Isabel Pastor López
- *  @version 1.0
- *  @see <a href="https://pinballvirtual.es/diccionario-pinball-virtual/">Diccionario Pinball Virtual</a>
+ * Clase Bolo recibe como atributos
+ * la posición (Item) donde se encuentra
+ * un atributo boolean estático que muestra si la bola está en juego o se ha colado (Game Over)
+ *
+ * @author Isabel Pastor López
+ * @version 1.0
+ * @see <a href="https://pinballvirtual.es/diccionario-pinball-virtual/">Diccionario Pinball Virtual</a>
  */
 public class Ball {
-    private Item position;
+
+    /**
+     * The constant lostBall.
+     */
     public static boolean lostBall = false;
 
-    public Ball() {
-        // La bola siempre se crea (aparece) en la rampa de salida con los mismos parámetros
-        // Item id "RampaSalida" (rampa de salida donde se lanza la bola)
-        // En el momento de la creación tiene 0 puntos
-        // puede alcanzar una escala de uno a diez
-        Combo start = new Combo("RampaSalida",0,10);
-        setPosition(start);
-    }
+    /**
+     * The constant position.
+     */
+// La bola siempre parte de la posición rampa de salida
+    public static Item position = new Combo("RampaSalida",0,10);
 
-    public static boolean isGameOver() {
+
+    // Getters and Setters
+
+    /**
+     * Is lost ball boolean.
+     *
+     * @return the boolean
+     */
+    public static boolean isLostBall() {
         return lostBall;
     }
 
-    public static void setGameOver(boolean gameOver) {
-        Ball.lostBall = gameOver;
+    /**
+     * Sets lost ball.
+     *
+     * @param lostBall the lost ball
+     */
+    public static void setLostBall(boolean lostBall) {
+        Ball.lostBall = lostBall;
     }
 
+    /**
+     * Gets position.
+     *
+     * @return the position
+     */
     public Item getPosition() {
         return position;
     }
 
+    /**
+     * Sets position.
+     * Si la bola está en la posición OutHole o SkinHole (agujeros) se establece como lostball true
+     *
+     * @param position the position
+     */
     public void setPosition(Item position) {
-        this.position = position;
+        Ball.position = position;
+        if (position instanceof OutHole || position instanceof SkinHole){ // si cae en un agujero
+            setLostBall(true);
+        }
     }
 
 }
